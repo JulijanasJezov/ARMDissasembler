@@ -1,0 +1,5 @@
+B main
+
+LDRB R0, [R1, R2]
+;LDRB R0, R1, R2
+LDRB R0,[R2, R3]

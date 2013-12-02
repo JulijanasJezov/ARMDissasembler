@@ -1,0 +1,42 @@
+KMD
+00000000:             ; ; Framework for strlen question
+00000000:             ; 
+00000000: E28F0004    ; main    ADR R0, text1   ; get address of starting byte of string
+00000004: E3A02000    ;         MOV R2, #0      ; Initialise the counter in Register 2 
+00000008: E5501000    ; again   LDRB R1, [R0]   ; this loads into r1 the byte whose address is currently in R0
+0000000C:             ;                         ; Replace this comment with your own code to check that the contents 
+0000000C:             ;                         ; of R1 are not the null byte. If R1 is not null then you need to 
+0000000C:             ;                         ; increment both  the count and the byte address and branch back to 
+0000000C:             ;                         ; label `again'. If the null byte HAS been encountered then print out
+0000000C:             ;                         ;  the answer in the form stipulated by the question.
+0000000C:             ; 
+0000000C:             ; ; you'll need a few more string declarations here to get the answer `looking right'.
+0000000C: 48 65 6C 6C ; text1   DEFB    "Hello World. Goodbye Universe\0"
+00000010: 6F 20 57 6F ; 
+00000014: 72 6C 64 2E ; 
+00000018: 20 47 6F 6F ; 
+0000001C: 64 62 79 65 ; 
+00000020: 20 55 6E 69 ; 
+00000024: 76 65 72 73 ; 
+00000028: 65 00       ; 
+0000002A: 31 32 33 34 ; text2   DEFB    "1234567890 are the ten decimal digits\0"
+0000002E: 35 36 37 38 ; 
+00000032: 39 30 20 61 ; 
+00000036: 72 65 20 74 ; 
+0000003A: 68 65 20 74 ; 
+0000003E: 65 6E 20 64 ; 
+00000042: 65 63 69 6D ; 
+00000046: 61 6C 20 64 ; 
+0000004A: 69 67 69 74 ; 
+0000004E: 73 00       ; 
+00000050: 00          ; nulltxt DEFB    "\0"
+00000054:             ;         ALIGN
+00000054:             ; 
+00000054:             ; 
+
+Symbol Table: Labels
+: main                              00000000  Local -- ARM
+: again                             00000008  Local -- ARM
+: text1                             0000000C  Local -- ARM
+: text2                             0000002A  Local -- ARM
+: nulltxt                           00000050  Local -- ARM
